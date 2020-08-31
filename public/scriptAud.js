@@ -2,7 +2,7 @@
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
-  host: 'localhost',
+  host: 'morning-fjord-33054.herokuapp.com',
   port: '9005',
   path: '/myapp'
 })
