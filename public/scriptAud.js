@@ -4,8 +4,8 @@ const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   secure: true, 
   host: 'morning-fjord-33054.herokuapp.com',
-  port: '443',
- // path: '/myapp'
+  port: '9000',
+  path: '/myapp'
 })
 const myVideo = document.createElement('video')
 myVideo.muted = true
