@@ -10,7 +10,9 @@ const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
 const { PeerServer } = require('peer');
 
-const peerServer = PeerServer({ port: 9005, path: '/myapp' });
+const peerServer = PeerServer({secure: true, 
+  host: 'morning-fjord-33054.herokuapp.com',
+  port: '9000',});
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // app.get('/audiochat', (req, res) => {
