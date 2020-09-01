@@ -13,7 +13,7 @@ const { PeerServer } = require('peer');
 const peerServer = PeerServer({secure: true, 
   host: 'morning-fjord-33054.herokuapp.com',
   port: '9000',
-  path: '/myapp'});
+});
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // app.get('/audiochat', (req, res) => {

@@ -4,7 +4,6 @@ const myPeer = new Peer(undefined, {
   secure: true, 
   host: 'morning-fjord-33054.herokuapp.com',
   port: '9000',
-  path: '/myapp'
 })
 // const socket = require('socket.io-client')({
 //   path: '/videochat'
