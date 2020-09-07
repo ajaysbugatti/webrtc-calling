@@ -3,7 +3,7 @@ const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   secure: true, 
   host: 'morning-fjord-33054.herokuapp.com',
-  port: '9005',
+  port: '443',
   path: '/myapp'
 })
 // const socket = require('socket.io-client')({
