@@ -11,11 +11,11 @@ const fs = require('fs')
 const { v4: uuidV4 } = require('uuid')
 const { PeerServer } = require('peer');
 
-const peerServer = PeerServer({ port: 443,
-  ssl: {
-    key: fs.readFileSync('certificates/key.pem'),
-    cert: fs.readFileSync('./certificates/cert.pem')
-  },
+const peerServer = PeerServer({ port: 9005,
+  // ssl: {
+  //   key: fs.readFileSync('certificates/key.pem'),
+  //   cert: fs.readFileSync('./certificates/cert.pem')
+  // },
   path: '/myapp'
   });
 app.set('view engine', 'ejs')
