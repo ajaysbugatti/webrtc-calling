@@ -13,7 +13,7 @@ const { PeerServer } = require('peer');
 
 const peerServer = PeerServer({ port: 9005,
   ssl: {
-    key: fs.readFileSync('./certificates/key.pem'),
+    key: fs.readFileSync('certificates/key.pem'),
     cert: fs.readFileSync('./certificates/cert.pem')
   },
   path: '/myapp'
