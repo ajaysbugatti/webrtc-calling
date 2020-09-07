@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+const fs = require('fs')
 // server-side
 // const io = require('socket.io')({
 //   path: '/audiochat/id'
@@ -10,7 +11,13 @@ const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
 const { PeerServer } = require('peer');
 
-const peerServer = PeerServer({ port: 9000, path: '/myapp' });
+const peerServer = PeerServer({ port: 9005,
+  ssl: {
+    key: fs.readFileSync('./certificates/key.pem'),
+    cert: fs.readFileSync('./certificates/cert.pem')
+  },
+  path: '/myapp'
+  });
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // app.get('/audiochat', (req, res) => {
