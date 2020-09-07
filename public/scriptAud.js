@@ -1,7 +1,7 @@
 //const socket = io('/',{path:'/audiochat'})
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
-const myPeer = new Peer(undefined, {
+const myPeer = new Peer('bugatti', {
   secure:true,
   host: 'morning-fjord-33054.herokuapp.com',
   port: '9005',
