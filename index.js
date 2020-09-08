@@ -9,9 +9,10 @@ const fs = require('fs')
 // });
 //const io = require('socket.io')
 const { v4: uuidV4 } = require('uuid')
-const { PeerServer } = require('peer');
+const { PeerServer,ExpressPeerServer } = require('peer');
 
-const peerServer = PeerServer({ port: 9005,
+const peerServer = ExpressPeerServer(server,{ 
+  //port: 9005,
   // ssl: {
   //   key: fs.readFileSync('certificates/key.pem'),
   //   cert: fs.readFileSync('./certificates/cert.pem')
@@ -20,6 +21,7 @@ const peerServer = PeerServer({ port: 9005,
   });
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+app.use('/peerjs' ,peerServer);
 // app.get('/audiochat', (req, res) => {
 //   res.redirect(`/video/${uuidV4()}`)
 // })
@@ -39,10 +41,11 @@ res.send("successfully hanged up .go back same url to rejoin" );
 io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
     socket.join(roomId)
-    console.log('joined')
+    console.log('joined',userId)
     socket.to(roomId).broadcast.emit('user-connected', userId)
 
     socket.on('disconnect', () => {
+      console.log(userId,'disconnected')
       socket.to(roomId).broadcast.emit('user-disconnected', userId)
     })
   })
