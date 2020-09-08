@@ -13,10 +13,10 @@ const { PeerServer,ExpressPeerServer } = require('peer');
 
 const peerServer = ExpressPeerServer(server,{ 
   //port: 9005,
-  ssl: {
-    key: fs.readFileSync('certificates/key.pem'),
-    cert: fs.readFileSync('./certificates/cert.pem')
-  },
+  // ssl: {
+  //   key: fs.readFileSync('certificates/key.pem'),
+  //   cert: fs.readFileSync('./certificates/cert.pem')
+  // },
   path: '/myapp'
   });
 app.set('view engine', 'ejs')

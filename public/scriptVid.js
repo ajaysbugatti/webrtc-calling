@@ -2,9 +2,9 @@ const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   //secure: true, 
-  host: 'location.hostname',
-  port: 'location.port',
-  path: '/myapp'
+  host: '/',
+  port: '5000',
+  path: '/peerjs/myapp'
 })
 // const socket = require('socket.io-client')({
 //   path: '/videochat'
